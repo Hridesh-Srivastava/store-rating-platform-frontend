@@ -1,0 +1,136 @@
+.detail-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.store-header {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.store-header h1 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.store-header .address {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.store-stats {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.store-stats .rating {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.store-stats .count {
+  color: #95a5a6;
+}
+
+.error-message {
+  background: #ffe6e6;
+  color: #c0392b;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.rating-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.rating-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.rating-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.star:hover, .star.active {
+  color: #f39c12;
+}
+
+.submit-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #229954;
+}
+
+.ratings-list {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ratings-list h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.rating-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.rating-item:last-child {
+  border-bottom: none;
+}
+
+.rating-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.rating-stars {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.rating-date {
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
