@@ -26,7 +26,8 @@ export default function Register() {
     setLoading(true);
 
     try {
-      const data = await signup(formData);
+      const response = await signup(formData);
+      const data = response?.data || response;
       localStorage.setItem('token', data.token);
       localStorage.setItem('userId', data.userId);
       localStorage.setItem('role', formData.role);
@@ -86,6 +87,7 @@ export default function Register() {
           >
             <option value="normal_user">Normal User</option>
             <option value="store_owner">Store Owner</option>
+            <option value="system_admin">System Admin</option>
           </select>
           
           <button type="submit" disabled={loading}>

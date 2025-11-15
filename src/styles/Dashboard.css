@@ -1,5 +1,5 @@
 .dashboard-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -20,6 +20,123 @@
 }
 
 .dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.store-owner-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.store-owner-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.store-stats-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e1e8ed;
+}
+
+.store-stats-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.store-address {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+  display: block;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  display: block;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ratings-list-section h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.no-ratings {
+  text-align: center;
+  color: #95a5a6;
+  padding: 2rem;
+}
+
+.ratings-table {
+  overflow-x: auto;
+}
+
+.ratings-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ratings-table th {
+  background: #34495e;
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.ratings-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.ratings-table tr:hover {
+  background: #f8f9fa;
+}
+
+.rating-badge {
+  background: #f39c12;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.no-store-msg {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.password-section {
   background: white;
   padding: 2rem;
   border-radius: 8px;

@@ -20,15 +20,18 @@ export default function StoreDetail() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const storeData = await getStoreById(id);
+      const storeResponse = await getStoreById(id);
+      const storeData = storeResponse?.data || storeResponse;
       setStore(storeData);
 
-      const ratingsData = await getStoreRatings(id);
-      setRatings(ratingsData);
+      const ratingsResponse = await getStoreRatings(id);
+      const ratingsData = ratingsResponse?.data || ratingsResponse;
+      setRatings(Array.isArray(ratingsData) ? ratingsData : []);
 
       if (token) {
         try {
-          const userRatingData = await getUserRating(id);
+          const userRatingResponse = await getUserRating(id);
+          const userRatingData = userRatingResponse?.data || userRatingResponse;
           setUserRating(userRatingData.rating);
           setNewRating(userRatingData.rating);
         } catch (err) {

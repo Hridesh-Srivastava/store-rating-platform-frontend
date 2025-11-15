@@ -31,14 +31,9 @@ export default function Navbar() {
 
           {token ? (
             <>
-              {role === 'admin' && (
+              <Link to="/dashboard" className="nav-link">Dashboard</Link>
+              {role === 'system_admin' && (
                 <Link to="/admin" className="nav-link">Admin</Link>
-              )}
-              {role === 'store_owner' && (
-                <Link to="/dashboard" className="nav-link">Dashboard</Link>
-              )}
-              {role === 'normal_user' && (
-                <Link to="/dashboard" className="nav-link">My Ratings</Link>
               )}
               <button className="logout-btn" onClick={handleLogout}>
                 Logout

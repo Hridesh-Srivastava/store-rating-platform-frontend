@@ -18,9 +18,11 @@ export const login = (data) => API.post('/auth/login', data);
 export const updatePassword = (data) => API.put('/users/password', data);
 export const getAllUsers = () => API.get('/users');
 export const getUserById = (id) => API.get(`/users/${id}`);
+export const createUser = (data) => API.post('/users', data);
 
 export const getAllStores = (params) => API.get('/stores', { params });
 export const getStoreById = (id) => API.get(`/stores/${id}`);
+export const createStore = (data) => API.post('/stores', data);
 
 export const submitRating = (storeId, rating) =>
   API.post('/ratings', { storeId, rating });

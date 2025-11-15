@@ -94,11 +94,20 @@
   background: #2980b9;
 }
 
-.loading, .no-stores {
+.loading, .no-stores, .error-msg {
   text-align: center;
   padding: 2rem;
   color: #7f8c8d;
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+.error-msg {
+  color: #e74c3c;
+  background: #ffe5e5;
+  border: 1px solid #ffc9c9;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
 }
 
 @media (max-width: 768px) {

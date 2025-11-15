@@ -8,18 +8,32 @@ export default function Stores() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState('name');
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchStores();
+    const timer = setTimeout(() => {
+      fetchStores();
+    }, 300);
+    return () => clearTimeout(timer);
   }, [search, sortBy]);
 
   const fetchStores = async () => {
     try {
       setLoading(true);
-      const data = await getAllStores({ search, sortBy });
-      setStores(data);
+      setError(null);
+      const response = await getAllStores({ search, sortBy });
+      const data = response?.data || [];
+      
+      if (Array.isArray(data)) {
+        setStores(data);
+      } else {
+        setStores([]);
+      }
     } catch (err) {
       console.error('Error fetching stores:', err);
+      const errorMsg = err.response?.data?.error || 'Unable to load stores. Please try again.';
+      setError(errorMsg);
+      setStores([]);
     } finally {
       setLoading(false);
     }
@@ -45,6 +59,8 @@ export default function Stores() {
 
       {loading ? (
         <p className="loading">Loading stores...</p>
+      ) : error ? (
+        <p className="error-msg">{error}</p>
       ) : stores.length === 0 ? (
         <p className="no-stores">No stores found</p>
       ) : (
@@ -54,8 +70,8 @@ export default function Stores() {
               <h3>{store.name}</h3>
               <p className="address">{store.address}</p>
               <div className="rating-info">
-                <span className="rating">★ {store.average_rating}</span>
-                <span className="count">({store.total_ratings} ratings)</span>
+                <span className="rating">★ {store.average_rating || 0}</span>
+                <span className="count">({store.total_ratings || 0} ratings)</span>
               </div>
               <Link to={`/stores/${store.id}`} className="view-btn">
                 View Details
